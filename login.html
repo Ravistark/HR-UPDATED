@@ -100,7 +100,7 @@
                                         <br>
 
                                     <div class="col-sm-4">
-                                        <button class="btn btn-primary btn-sm" id="sub" name="submit">submit</button>
+                                        <input type="submit" name="submit" id="sub" value="submit" class=" btnSubmit btn-block form-group" />
                                     </div>
                                 </form>
                             </div>
@@ -118,8 +118,12 @@
   
     form.addEventListener('submit', e => {
       e.preventDefault();
+      document.querySelector("#sub").value = "Submiting..";
+      
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("submitted..! We Will Contact You Soon..."))
+      
+     
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
         .then(data => {
             document.querySelector("#sub").value = "Submitted"
             
